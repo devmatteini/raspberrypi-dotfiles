@@ -64,7 +64,7 @@ install_docker(){
   rm get-docker.sh
 
   # Post-installation
-  sudo groupadd docker
+  sudo groupadd -f docker
   sudo usermod -aG docker "$USER"
   # Activate group changes for current session
   newgrp docker
