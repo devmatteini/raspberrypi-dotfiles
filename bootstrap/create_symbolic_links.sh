@@ -41,6 +41,7 @@ symlink_dir_files() {
 
 symlink_dir_files "bash" "$HOME"
 symlink_dir_files "vim" "$HOME"
+symlink_dir_files "git" "$HOME"
 symlink_dir_files "config" "$HOME/.config"
 
 echo -e "\e[1;32m[✓] Symlinks created succesfully.\e[0m"
