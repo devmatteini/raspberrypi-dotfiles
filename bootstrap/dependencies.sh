@@ -84,7 +84,8 @@ sudo apt install -y build-essential \
   python3-dev \
   python3-setuptools \
   pipx \
-  vim
+  vim \
+  nodejs
 
 install_dra
 install_fzf
