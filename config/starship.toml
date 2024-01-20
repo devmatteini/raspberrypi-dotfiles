@@ -1,0 +1,20 @@
+# Don't print a new line at the start of the prompt
+add_newline = false
+command_timeout = 700
+
+[hostname]
+ssh_only = false
+
+[directory]
+truncate_to_repo = false
+style = "bold #5faf5f"
+
+[character]
+success_symbol = "[◆](bold white)"
+error_symbol = "[◆](bold red)"
+
+[git_branch]
+style = "bold #5f5faf"
+
+[git_status]
+style = "bold #afd7ff"
