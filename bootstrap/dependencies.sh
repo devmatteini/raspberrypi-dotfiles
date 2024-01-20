@@ -59,6 +59,11 @@ install_fzf(){
 }
 
 install_docker(){
+  if command -v docker >/dev/null; then
+    echo "Docker is already installed. You can manage it via apt"
+    return
+  fi
+
   curl -fsSL https://get.docker.com -o get-docker.sh
   sudo sh get-docker.sh
   rm get-docker.sh
