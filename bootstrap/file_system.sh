@@ -7,3 +7,6 @@ mkdir -p "$HOME/.local/bin"
 mkdir -p "$HOME/.local/share/bash-completion/completions"
 mkdir -p "$HOME/.local/apps"
 mkdir -p "$HOME/dev"
+
+# Setup ssh directory
+mkdir -p -m 700 "$HOME/.ssh"
