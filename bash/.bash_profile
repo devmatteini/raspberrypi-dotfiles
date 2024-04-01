@@ -6,6 +6,10 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+if [ -d "$HOME/.local/share/mise/shims" ] ; then
+    PATH="$HOME/.local/share/mise/shims:$PATH"
+fi
+
 for file in ~/.{bash_exports,bash_aliases,bash_options,bash.local}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;

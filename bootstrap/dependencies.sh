@@ -75,6 +75,11 @@ install_docker(){
   newgrp docker
 }
 
+install_mise(){
+  dra download -s "mise-v{tag}-linux-arm64-musl" -o ~/.local/bin/mise jdx/mise
+  chmod +x ~/.local/bin/mise
+}
+
 sudo apt update
 
 sudo apt install -y build-essential \
@@ -91,6 +96,7 @@ install_dra
 install_fzf
 install_starship
 install_docker
+install_mise
 
 setup_pipx
 setup_vim
