@@ -76,6 +76,6 @@ symlink_file "$CONFIGS/.gitconfig" "$HOME"
 symlink_file "$CONFIGS/.vimrc" "$HOME"
 symlink_file "$CONFIGS/starship.toml" "$HOME/.config"
 symlink_dir_files "$CONFIGS/ssh" "$HOME/.ssh"
-symlink_dir_files "$CONFIGS/cron" "/ect/cron.d"
+symlink_dir_files "$CONFIGS/cron" "/etc/cron.d"
 
 echo -e "\e[1;32m[✓] Symlinks created succesfully.\e[0m"
