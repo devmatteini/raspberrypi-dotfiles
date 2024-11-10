@@ -71,10 +71,10 @@ symlink_dir() {
     symlink_dir_files "$directory" "$target_dir"
 }
 
-symlink_dir_files "bash" "$HOME"
-symlink_dir_files "vim" "$HOME"
-symlink_dir_files "git" "$HOME"
-symlink_dir_files "config" "$HOME/.config"
-symlink_dir_files "ssh" "$HOME/.ssh"
+symlink_dir_files "$CONFIGS/bash" "$HOME"
+symlink_file "$CONFIGS/.gitconfig" "$HOME"
+symlink_file "$CONFIGS/.vimrc" "$HOME"
+symlink_file "$CONFIGS/starship.toml" "$HOME/.config"
+symlink_dir_files "$CONFIGS/ssh" "$HOME/.ssh"
 
 echo -e "\e[1;32m[✓] Symlinks created succesfully.\e[0m"
