@@ -71,11 +71,21 @@ symlink_dir() {
     symlink_dir_files "$directory" "$target_dir"
 }
 
+# $1 = source_directory, $2 = target_directory
+sudo_copy_dir_files() {
+    local directory=$1
+    local target_directory=$2
+
+    for file in "$directory"/*; do
+        sudo cp "$file" "$target_directory"
+    done
+}
+
 symlink_dir_files "$CONFIGS/bash" "$HOME"
 symlink_file "$CONFIGS/.gitconfig" "$HOME"
 symlink_file "$CONFIGS/.vimrc" "$HOME"
 symlink_file "$CONFIGS/starship.toml" "$HOME/.config"
 symlink_dir_files "$CONFIGS/ssh" "$HOME/.ssh"
-symlink_dir_files "$CONFIGS/cron" "/etc/cron.d"
+sudo_copy_dir_files "$CONFIGS/cron" "/etc/cron.d"
 
 echo -e "\e[1;32m[✓] Symlinks created succesfully.\e[0m"

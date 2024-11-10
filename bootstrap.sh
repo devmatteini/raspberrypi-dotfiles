@@ -5,5 +5,5 @@ set -euo pipefail
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 "$BASEDIR"/bootstrap/file_system.sh
-sudo "$BASEDIR"/bootstrap/configs.sh "$BASEDIR"
+"$BASEDIR"/bootstrap/configs.sh "$BASEDIR"
 "$BASEDIR"/bootstrap/dependencies.sh
