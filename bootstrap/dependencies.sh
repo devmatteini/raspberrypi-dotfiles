@@ -3,6 +3,7 @@
 set -euo pipefail
 
 DRA="/usr/local/bin/dra"
+MISE="$HOME/.local/bin/mise"
 
 # https://github.com/devmatteini/dra
 install_dra(){
@@ -65,8 +66,12 @@ install_docker(){
 }
 
 install_mise(){
-  dra download -s "mise-v{tag}-linux-arm64-musl" -o ~/.local/bin/mise jdx/mise
-  chmod +x ~/.local/bin/mise
+  "$DRA" download -s "mise-v{tag}-linux-arm64-musl" -i -o "$MISE" jdx/mise
+}
+
+install_nodejs(){
+  "$MISE" install node@20
+  "$MISE" use -g node@20
 }
 
 sudo apt update
@@ -78,14 +83,14 @@ sudo apt install -y build-essential \
   python3-dev \
   python3-setuptools \
   pipx \
-  vim \
-  nodejs
+  vim
 
 install_dra
 install_fzf
 install_starship
 install_docker
 install_mise
+install_nodejs
 
 setup_pipx
 
