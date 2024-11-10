@@ -24,17 +24,6 @@ install_dra(){
   "$DRA" completion bash >"$HOME"/.local/share/bash-completion/completions/dra
 }
 
-setup_vim(){
-  mkdir -p ~/.vim ~/.vim/autoload ~/.vim/backup ~/.vim/colors ~/.vim/plugged
-
-  # Install vim-plug (https://github.com/junegunn/vim-plug)
-  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-  # Install plugins (https://github.com/junegunn/vim-plug/issues/675#issuecomment-328157169)
-  vim +'PlugInstall --sync' +qa
-}
-
 setup_pipx(){
   local python_argcomplete=""
   if command -v register-python-argcomplete3 > /dev/null; then
@@ -99,7 +88,6 @@ install_docker
 install_mise
 
 setup_pipx
-setup_vim
 
 # Cleanup
 sudo apt autoremove -y
