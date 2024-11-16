@@ -1,3 +1,3 @@
 SHELL=/bin/bash
-# Run every 5 minutes (https://crontab.guru/every-5-minutes)
-*/5 * * * * ragnar /home/ragnar/dotfiles/scripts/check-wifi.sh
+# Run every 2 minutes (https://crontab.guru/every-2-minutes)
+*/2 * * * * ragnar /home/ragnar/dotfiles/scripts/check-wifi.sh
