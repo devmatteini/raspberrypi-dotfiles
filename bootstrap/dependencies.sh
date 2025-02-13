@@ -65,6 +65,15 @@ install_nodejs(){
   "$MISE" use -g node@22
 }
 
+install_caddy(){
+  # https://caddyserver.com/docs/install#debian-ubuntu-raspbian
+  sudo apt install -y debian-keyring debian-archive-keyring apt-transport-https curl
+  curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+  curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list
+  sudo apt update
+  sudo apt install -y caddy
+}
+
 sudo apt update
 
 sudo apt install -y build-essential \
@@ -82,6 +91,7 @@ install_starship
 install_docker
 install_mise
 install_nodejs
+install_caddy
 
 setup_pipx
 
